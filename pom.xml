@@ -22,6 +22,8 @@
     <!--聚合模块-->
     <modules>
         <module>oauth-client</module>
+        <module>oauth-resource</module>
+        <module>oauth-server</module>
     </modules>
     <dependencies>
         <dependency>
