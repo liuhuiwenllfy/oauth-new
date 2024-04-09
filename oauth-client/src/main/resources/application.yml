@@ -1,0 +1,33 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: messages-client
+  security:
+    oauth2:
+      client:
+        registration:
+          messaging-client-oidc:
+            provider: authorization-server
+            client-id: messaging-client
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            #            redirect-uri: "http://127.0.0.1:8000/login/oauth2/code/messaging-client-oidc"
+            redirect-uri: "{baseUrl}/login/oauth2/code/messaging-client-oidc"
+            scope: openid,message.read,message.write
+            client-name: messaging-client-oidc
+        provider:
+          # 服务提供地址
+          authorization-server:
+            # issuer-uri 可以简化下面的配置
+            issuer-uri: http://127.0.0.1:9000
+            # 请求授权码地址
+            #            authorization-uri: http://localhost:9000/oauth2/authorize
+            # 请求令牌地址
+            #            token-uri: http://localhost:9000/oauth2/token
+            # 用户资源地址
+            #            user-info-uri: http://localhost:9000/oauth2/user
+            # 用户资源返回中的一个属性名
+#            user-name-attribute: name
+#            user-info-authentication-method: GET
