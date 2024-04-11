@@ -21,7 +21,7 @@ spring:
           # 服务提供地址
           authorization-server:
             # issuer-uri 可以简化下面的配置
-            issuer-uri: http://127.0.0.1:9000
+            issuer-uri: http://localhost:9000
             # 请求授权码地址
             #            authorization-uri: http://localhost:9000/oauth2/authorize
             # 请求令牌地址
